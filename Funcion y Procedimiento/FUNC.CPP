@@ -1,0 +1,33 @@
+
+#include <conio.h>
+#include <stdio.h>
+
+/* hacer un programa que calcule la potencia */
+
+
+   int potencia (int a, int b);
+
+void main (){
+
+   clrscr ();
+
+   int base, exp, p;
+
+   printf ("Valor de la base: ");
+   scanf ("%d",&base);
+   printf ("Valor del exponente: ");
+   scanf ("%d",&exp);
+   p = potencia (base,exp);
+   printf ("La potencia de %d elevado a %d es: %d",base,exp,p);
+
+   getche ();
+}
+
+int potencia (int a, int b){
+   int i;
+   int x = 1;
+   for (i=1;i<=b;i++){
+      x = x*a;
+   }
+   return x;
+}

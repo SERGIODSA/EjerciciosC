@@ -1,0 +1,36 @@
+#include <conio.h>
+#include <stdio.h>
+
+#define n 10
+
+
+/* cargar un vector de 10 posiciones con los 10 primeros elementos
+de fibonacci y mostrarlo en la pantalla */
+
+void main (){
+
+   clrscr();
+
+   printf ("Serie de fibonacci:  \n");
+
+   int t, j, k, i, v[n];
+
+   t = 0;
+   i = 0;
+   j = 1;
+
+   for (k=0;k<n;k++){
+
+   v[k] = t;
+   t = i+j;
+   i = j;
+   j = t;
+
+   printf ("%d ",v[k]);
+
+   }
+
+   getche();
+
+}
+

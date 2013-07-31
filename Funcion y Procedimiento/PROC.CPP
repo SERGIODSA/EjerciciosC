@@ -1,0 +1,47 @@
+#include <conio.h>
+#include <stdio.h>
+
+/* calcular el numero combinatorio */
+
+/*    CMN = (m! / (n! * (m-n)! )) */
+
+
+   int factorial (int x);
+
+void main (){
+
+   clrscr ();
+
+   int a, b, c, m, n, CMN;
+
+
+   printf ("Valor M: ");
+   scanf ("%d",&m);
+   printf ("valor N: ");
+   scanf ("%d",&n);
+
+   a = factorial (m);
+   b = factorial (n);
+   c = factorial (m - n);
+
+   CMN = a / (b*c);
+
+   printf ("El numero combinatorio es %d",CMN);
+
+   getche ();
+
+}
+
+int factorial (int x){
+
+   int i,f = 1;
+
+   for (i=x;i>1;i--){
+
+      f = f*i;
+
+   }
+
+   return f;
+
+}

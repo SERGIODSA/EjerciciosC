@@ -1,0 +1,61 @@
+#include <conio.h>
+#include <stdio.h>
+
+#define n 10
+
+/* leer 10 numeros, almacenar en un vector y determinar en que posicion
+esta el numero cuya suma de digitos sea la mayor */
+
+void main(){
+
+   clrscr();
+
+   int s,aux,a,i,v[n],p[n],b;
+
+   s = 0;
+   a = 0;
+
+   printf ("Introducir vector: \n");
+
+   for (i=0;i<n;i++){               /* lectura */
+
+      printf ("[%d]: ",i+1);
+      scanf ("%d",&v[i]);
+
+   }
+
+   for (i=0; i<n; i++){             /* calcula suma digitos */
+
+      aux = v[i];
+
+      while (aux != 0){
+
+	 a = aux % 10;
+	 aux = aux / 10;
+	 s = s + a;
+      }
+
+      p[i] = s;
+      s = 0;
+   }
+
+   b = p[0];
+
+   for (i=0;i<n;i++){               /* determina cual es el mayor */
+
+      if (p[i] > b)
+	 b = p[i];
+   }
+
+
+   printf ("El mayor promedio de digitos se ubica en la posicion... \n");
+
+   for (i=0; i<n; i++){             /* imprimir */
+
+     if (p[i] == b)
+
+	printf ("%d ",i+1);
+   }
+
+   getche();
+}

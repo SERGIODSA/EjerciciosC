@@ -1,0 +1,44 @@
+#include <conio.h>
+#include <stdio.h>
+
+#define n 10
+
+/* leer 10 numeros, almacenar en un vector y mostrar cuantas veces esta
+repetido el mayor */
+
+void main(){
+
+   clrscr();
+
+   int i,v[n],max,c;
+
+   max = 0;
+   c = 0;
+
+   printf ("Introducir vector: \n");
+
+   for (i=0;i<n;i++){
+
+      printf ("[%d]: ",i+1);
+      scanf ("%d",&v[i]);
+
+   }
+
+   for (i=0;i<n;i++){
+
+      max = v[i];
+
+      if (v[i] > max )
+	 max = v[i];
+
+   }
+
+   for (i=0;i<n;i++){
+      if (v[i] == max)
+      c++;
+   }
+
+   printf ("El valor mayor esta repetido %d veces \n",c);
+
+   getche();
+}
